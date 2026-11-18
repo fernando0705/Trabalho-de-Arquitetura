@@ -1,4 +1,4 @@
-package br.unifil.agendamento;
+package br.unifil.agendamento.application;
 
 import br.unifil.agendamento.application.dtos.AgendarConsultaInput;
 import br.unifil.agendamento.application.usecases.AgendarConsultaUseCase;
