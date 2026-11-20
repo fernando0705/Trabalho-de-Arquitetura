@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>consultas.com — agendamento online</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<header>
+    <div class="logo">
+      <span class="logo-icone">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 21s-7-4.35-7-10a4 4 0 0 1 7-2.65A4 4 0 0 1 19 11c0 5.65-7 10-7 10z"/>
+          <path d="M8.5 11.5h2l1-2 1.5 4 1-2h1.5"/>
+        </svg>
+      </span>
+        <span class="logo-texto">consultas<span class="logo-ponto">.com</span></span>
+    </div>
+    <p class="subtitulo">agendamento online</p>
+</header>
+
+<main class="card" id="tela-login">
+    <h2>Entrar</h2>
+    <p class="texto-apoio">Informe seu CPF para acessar suas consultas.</p>
+
+    <div id="login-erro" class="mensagem oculto"></div>
+
+    <div class="campo">
+        <label for="cpf">CPF</label>
+        <input id="cpf" type="text" placeholder="000.000.000-00" autocomplete="off">
+    </div>
+
+    <button class="btn-principal" id="btn-entrar">Entrar</button>
+</main>
+
+<main class="card oculto" id="tela-app">
+    <div class="topo-logado">
+        <span>Olá, <strong id="nome-paciente"></strong></span>
+        <button class="btn-secundario" id="btn-sair">Sair</button>
+    </div>
+
+    <nav class="abas">
+        <button class="aba ativa" data-aba="agendar">Agendar</button>
+        <button class="aba" data-aba="agenda">Consultar agenda</button>
+    </nav>
+
+    <section id="aba-agendar">
+        <div id="agendar-mensagem" class="mensagem oculto"></div>
+
+        <div class="campo">
+            <label for="medico">Médico</label>
+            <select id="medico"></select>
+        </div>
+
+        <div class="linha">
+            <div class="campo">
+                <label for="data">Data</label>
+                <input id="data" type="date">
+            </div>
+            <div class="campo">
+                <label for="periodo">Período</label>
+                <select id="periodo">
+                    <option value="manha">Manhã</option>
+                    <option value="tarde">Tarde</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="campo">
+            <label>Horários disponíveis</label>
+            <div class="horarios" id="horarios">
+                <p class="vazio">Escolha médico, data e período.</p>
+            </div>
+        </div>
+
+        <button class="btn-principal" id="btn-agendar" disabled>Agendar consulta</button>
+    </section>
+
+    <section id="aba-agenda" class="oculto">
+        <div id="agenda-mensagem" class="mensagem oculto"></div>
+
+        <div class="campo">
+            <label for="data-agenda">Data</label>
+            <input id="data-agenda" type="date">
+        </div>
+
+        <div id="lista-consultas">
+            <p class="vazio">Nenhuma consulta para esta data.</p>
+        </div>
+    </section>
+</main>
+
+<footer>consultas.com · agendamento de consultas médicas</footer>
+
+<script src="/js/app.js" defer></script>
+</body>
+</html>

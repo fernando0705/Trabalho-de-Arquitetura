@@ -1,0 +1,349 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --fundo: #0d1f1a;
+    --fundo-card: #f7f5ef;
+    --fundo-campo: #ffffff;
+    --borda: #e2ded3;
+    --borda-forte: #cfc9ba;
+    --verde: #1f7a5c;
+    --verde-escuro: #14543f;
+    --verde-claro: #e8f4ef;
+    --texto: #14211c;
+    --texto-suave: #5f7269;
+    --erro: #b3261e;
+    --erro-fundo: #fdf3f2;
+    --sucesso-fundo: #e8f4ef;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    background: var(--fundo);
+    color: var(--texto);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 56px 20px 40px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 36px;
+}
+
+.logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-icone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    height: 46px;
+    border-radius: 13px;
+    background: #3ddc97;
+    color: #06231a;
+}
+
+.logo-icone svg {
+    width: 25px;
+    height: 25px;
+}
+
+.logo-texto {
+    font-size: 38px;
+    font-weight: 700;
+    letter-spacing: -1.2px;
+    color: #eaf5f0;
+}
+
+.logo-ponto {
+    color: #3ddc97;
+}
+
+.subtitulo {
+    font-size: 13px;
+    color: #8fada2;
+    margin-top: 10px;
+    letter-spacing: 1.4px;
+}
+
+.card {
+    width: 100%;
+    max-width: 520px;
+    background: var(--fundo-card);
+    border: 1px solid var(--borda);
+    border-radius: 18px;
+    padding: 32px 28px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.28);
+}
+
+.card h2 {
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.texto-apoio {
+    font-size: 13px;
+    color: var(--texto-suave);
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--texto-suave);
+    margin-bottom: 6px;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 12px 14px;
+    font-size: 15px;
+    font-family: inherit;
+    color: var(--texto);
+    background: var(--fundo-campo);
+    border: 1px solid var(--borda-forte);
+    border-radius: 10px;
+    outline: none;
+    transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+input::placeholder {
+    color: #9aa8a2;
+}
+
+input:focus,
+select:focus {
+    border-color: var(--verde);
+    box-shadow: 0 0 0 3px rgba(31, 122, 92, 0.14);
+}
+
+.campo {
+    margin-bottom: 16px;
+}
+
+.linha {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+button {
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+
+.btn-principal {
+    width: 100%;
+    padding: 13px;
+    background: var(--verde);
+    color: #ffffff;
+    font-weight: 600;
+    margin-top: 8px;
+}
+
+.btn-principal:hover {
+    background: var(--verde-escuro);
+}
+
+.btn-principal:disabled {
+    background: #c9d4cf;
+    color: #7d8f88;
+    cursor: not-allowed;
+}
+
+.btn-secundario {
+    padding: 9px 14px;
+    background: transparent;
+    color: var(--texto-suave);
+    border-color: var(--borda-forte);
+    font-size: 13px;
+}
+
+.btn-secundario:hover {
+    border-color: var(--verde);
+    color: var(--verde-escuro);
+}
+
+.btn-cancelar {
+    padding: 7px 12px;
+    background: transparent;
+    color: var(--erro);
+    border-color: #f0d5d3;
+    font-size: 12px;
+}
+
+.btn-cancelar:hover {
+    background: var(--erro-fundo);
+}
+
+.abas {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid var(--borda);
+}
+
+.aba {
+    padding: 10px 16px;
+    background: transparent;
+    color: var(--texto-suave);
+    border: none;
+    border-bottom: 2px solid transparent;
+    border-radius: 0;
+    font-size: 14px;
+    margin-bottom: -1px;
+}
+
+.aba.ativa {
+    color: var(--verde-escuro);
+    border-bottom-color: var(--verde);
+    font-weight: 600;
+}
+
+.horarios {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.horario {
+    padding: 10px 4px;
+    font-size: 13px;
+    background: var(--fundo-campo);
+    color: var(--texto);
+    border: 1px solid var(--borda-forte);
+    border-radius: 8px;
+}
+
+.horario:hover {
+    border-color: var(--verde);
+    color: var(--verde-escuro);
+}
+
+.horario.selecionado {
+    background: var(--verde);
+    color: #ffffff;
+    border-color: var(--verde);
+    font-weight: 600;
+}
+
+.vazio {
+    font-size: 13px;
+    color: var(--texto-suave);
+    padding: 16px 0;
+    text-align: center;
+}
+
+.consulta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--borda);
+}
+
+.consulta:last-child {
+    border-bottom: none;
+}
+
+.consulta-info strong {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.consulta-info span {
+    font-size: 12px;
+    color: var(--texto-suave);
+}
+
+.status {
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}
+
+.status.AGENDADA {
+    background: var(--verde-claro);
+    color: var(--verde-escuro);
+}
+
+.status.CANCELADA {
+    background: #ece9e0;
+    color: #7d8f88;
+}
+
+.status.REALIZADA {
+    background: #eef2ff;
+    color: #3b4a8c;
+}
+
+.mensagem {
+    font-size: 13px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+}
+
+.mensagem.erro {
+    background: var(--erro-fundo);
+    color: var(--erro);
+}
+
+.mensagem.sucesso {
+    background: var(--sucesso-fundo);
+    color: var(--verde-escuro);
+}
+
+.oculto {
+    display: none !important;
+}
+
+.topo-logado {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--borda);
+}
+
+.topo-logado span {
+    font-size: 13px;
+    color: var(--texto-suave);
+}
+
+.topo-logado strong {
+    color: var(--texto);
+}
+
+footer {
+    margin-top: 36px;
+    font-size: 12px;
+    color: #6b8a7f;
+    letter-spacing: 0.4px;
+}
